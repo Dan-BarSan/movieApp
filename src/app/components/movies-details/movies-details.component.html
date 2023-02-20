@@ -1,0 +1,63 @@
+<style>
+    a {margin-left: 15px; margin-right: 15px;}
+
+</style>
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<div *ngIf="comment"></div>
+<div class="row">
+    <div class="col-md-4">
+        <img src="{{movie.Poster}}" class="img-thumbnail" alt="{{movie.Title}}">
+    </div>
+    <div class="col-md-8">
+        <h2 class="text-center text-primary">{{movie.Title}}</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Genre:</strong> {{movie.Genre}}</li>
+            <li class="list-group-item"><strong>Released Date:</strong> {{movie.Released}}</li>
+            <li class="list-group-item"><strong>Country:</strong>   {{movie.Country}}</li>
+            <li class="list-group-item"><strong>Rated:</strong> {{movie.Rated}}</li>
+            <li class="list-group-item"><strong>Director:</strong>  {{movie.Director}}</li>
+            <li class="list-group-item"><strong>Actors:</strong>    {{movie.Actors}}</li>
+            <li class="list-group-item"><strong>Awards:</strong>    {{movie.Awards}}</li>
+            <li class="list-group-item"><strong>MetaScore:</strong> {{movie.Metascore}}</li>
+            <li class="list-group-item"><strong>IMBD Rating:</strong>   {{movie.imdbRating}}</li>
+            <li class="list-group-item"><strong>Total Votes:</strong> {{movie.imdbVotes}}</li>
+            <li class="list-group-item"><strong>Lenght:</strong>    {{movie.Runtime}}</li>
+
+        </ul>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="jumbotron">
+        <h3>Plot</h3>
+        {{movie.Plot}}
+        <hr/>
+        <a href="http://imdb.com/title/{{movie.imdbID}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View IMDB</a>
+        <a [routerLink]="['/movies']"  class="btn btn-danger">Go back to Search</a>
+    </div>
+</div>
+<br>
+<div class="row">
+<div class="jumbotron">
+    <h3>Comments</h3>
+    <hr>
+    <table>
+        <thead>
+            <th>User Name</th>
+            <th>Comment</th>
+            <th>Options</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let comm of comms ">
+                <td>{{comm.publi_name}}</td>
+                <td>{{comm.comment}}</td>
+                <td>
+                    <i title="Edit" class="fa-solid fa-pen-to-square"></i>
+                    <span>   </span>
+                    <i title="Delete" class="fa-regular fa-trash"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

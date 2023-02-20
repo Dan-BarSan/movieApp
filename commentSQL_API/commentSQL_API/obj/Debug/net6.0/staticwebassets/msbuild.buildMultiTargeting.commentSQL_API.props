@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\commentSQL_API.props" />
+</Project>

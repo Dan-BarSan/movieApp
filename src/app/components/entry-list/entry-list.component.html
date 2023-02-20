@@ -1,0 +1,58 @@
+<!-- Title group  -->
+<div class="title-group">
+    <h1 class="mat-h1">Comments List</h1>
+    <mat-divider fxFlex="1 0"></mat-divider>
+  </div>
+  <!-- No data message -->
+  <p *ngIf="EntryData.length <= 0" class="no-data">There is no comments yet!</p>
+  <!-- Entry list Angular material data table -->
+  <div class="container" *ngIf="EntryData.length > 0">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="$key">
+          <th mat-header-cell *matHeaderCellDef>Entry ID</th>
+          <td mat-cell *matCellDef="let element">{{ element.$key }}</td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>User Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.book_name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="publication_date">
+          <th mat-header-cell *matHeaderCellDef>Publication Date</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.publication_date }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="comment">
+          <th mat-header-cell *matHeaderCellDef>Reply:</th>
+          <td mat-cell *matCellDef="let element">{{ element.comment }}</td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef>Action</th>
+          <td mat-cell *matCellDef="let element; let i = index">
+            <button
+              mat-raised-button
+              color="primary"
+              class="push-right"
+              [routerLink]="['/edit-entry/', element.$key]"
+            >
+              Edit
+            </button>
+            <button
+              mat-raised-button
+              color="accent"
+              (click)="deleteEntry(i, element)"
+            >
+              Delete
+            </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+      ></mat-paginator>
+    </div>
+  </div>
