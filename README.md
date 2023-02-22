@@ -1,27 +1,24 @@
 # MovieApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+This project intends to simulate a web application where the user is able to search any given movie by typing a tittle name (response includes Series and Videogames). After find the specific movie. the user will be able to see details of any given movie, locate the IMDB link for further details and leave a comment for that specific tittle.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Details
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. To get all the information of any given movie the app will connect to 'http://www.omdbapi.com/', this external API will provide all the required information such as: actors, release date, director, awards, etc.
+The app will provide a basic connection to a local database for test purposes. The local DB will handle all the data for the comments section. To do this task, there is a second API called commentSQL_API. That API is located inside this Git.
 
-## Build
+2. Since this is a WebApp devoloped for testing purposes, the default connection and port must be set to 'http://localhost:4200'.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. Just for the same reason as above, the comment API must be set to this default connection and port 'https://localhost:7033/'.
 
-## Running unit tests
+4. To clarify points 3 & 4, the connections and permits between the WebApp and the API are set to use those specific ports.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Project Status
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The WebApp will load a default view with the catalog for "Avatar", all the coincidences will be shown on Cards. Clicking on this cards will load the details section that contains the movie information. At the end of the page there is a section to load all the related comments.
 
-## Further help
+Error: In order to get access to any list of comments, the webApp needs to send a request to the comment API. However the data seems to be undefined at the moment of execution.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

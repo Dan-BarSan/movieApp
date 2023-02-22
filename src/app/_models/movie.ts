@@ -24,6 +24,7 @@ export interface Movie {
     Type:         string;
     totalSeasons: string;
     Response:     string;
+    
 }
 
 export interface Rating {

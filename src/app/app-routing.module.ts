@@ -22,6 +22,8 @@ const routes: Routes =[
   //User request unauthorized page (Wildcard)
   {path: '**', component: MoviesComponent, pathMatch: 'full'},
 
+
+  //Delete this section on CLEANUP
   //Comments handler
   { path: '', pathMatch: 'full', redirectTo: 'add-entry' },
   { path: 'add-entry', component: AddEntryComponent },

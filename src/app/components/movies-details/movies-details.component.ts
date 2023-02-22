@@ -28,12 +28,20 @@ export class MoviesDetailsComponent implements OnInit {
     this.loadMovie();
 
     //VACIO --->>CORREGIR
-    this.loadComments(this.comment.title_id);
+    //this.loadComments(this.movie.imdbID);
 
-    this.commentSQLService.getComments(this.comment.title_id).subscribe((comm: commentSQL[]) => {
+    //Default string for testing
+    this.loadComments("tt0499549");
+
+
+    //Disable - duplicate
+
+    // this.comment.title_id  is changed to "tt0499549" for testing purpose 
+    /*
+    this.commentSQLService.getComments("tt0499549").subscribe((comm: commentSQL[]) => {
       console.log(comm);
       this.comms = comm;
-    })
+    })*/
   }
 
   loadMovie(){
@@ -45,6 +53,8 @@ export class MoviesDetailsComponent implements OnInit {
 
   loadComments(searchString: string){
 
+    //Con string adds an extra '/movies' in the URL ---> cannot send data to proper section.
+    // modify for this  particular instance? - change API?
     this.commentSQLService.getComments(searchString).subscribe((
       comment : commentSQL[]) =>{
 

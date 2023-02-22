@@ -20,7 +20,7 @@ export class CommentSQLService {
   public getComments(searchString: string) : Observable<commentSQL[]>{
 
   
-    //ANgular objeto a URL ---> Buscar
+    //Angular objeto a URL ---> Buscar
 
     //Construccion de cadena
     //https://localhost:7033/api/Comment?id=1&publi_name=Dan&title_id=tt0499549&comment=something%20RENOVATED%20%233%20
