@@ -22,3 +22,4 @@ The WebApp will load a default view with the catalog for "Avatar", all the coinc
 
 Error: In order to get access to any list of comments, the webApp needs to send a request to the comment API. However the data seems to be undefined at the moment of execution.
 
+There are some folders and files in queue to be deleted. These files were used for testing and learning purpouses. Once the WebApp gets completly integrated, a code cleanup will be executed. In the mean time please ignore the folders with "*-entry" and the files related to Firebase usage. 

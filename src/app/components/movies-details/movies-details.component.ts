@@ -28,10 +28,10 @@ export class MoviesDetailsComponent implements OnInit {
     this.loadMovie();
 
     //VACIO --->>CORREGIR
-    //this.loadComments(this.movie.imdbID);
+    this.loadComments(this.movie.imdbID);
 
     //Default string for testing
-    this.loadComments("tt0499549");
+    //this.loadComments("tt0499549");
 
 
     //Disable - duplicate
